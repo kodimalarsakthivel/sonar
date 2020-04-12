@@ -1,0 +1,14 @@
+pipeline{
+	agent any
+	
+	stages{
+		stage ('Build Stage'){
+			steps{
+				echo 'Building..'
+ 				withMaven(maven : 'maven-3.5.2'){
+					sh 'mvn clean'
+				}
+			}
+		}
+	}
+}
